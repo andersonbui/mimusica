@@ -93,9 +93,9 @@ $config = [
         ///
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
-            'enablePrettyUrl' => true,
-            'showScriptName' => true,
-            'enableStrictParsing' => false,
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => true,
+//            'enableStrictParsing' => false,
 //////////            'suffix' => '.html',
             'rules' => array(
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',

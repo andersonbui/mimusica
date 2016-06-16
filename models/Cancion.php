@@ -36,6 +36,9 @@ class Cancion extends \yii\db\ActiveRecord {
         return [
             [['id_cancion', 'titulo', 'genero', 'anioCreacion', 'letra'], 'required'],
             [['id_cancion', 'anioCreacion'], 'integer'],
+            'id_cancionUnique' => ['id_cancion', 'unique', 'message' => Yii::t('app', 'This id has already been taken')],
+            'videoUrl' => ['video', 'url'],
+            'email' => ['email', 'email'],
             [['fecha_subida'], 'safe'],
             [['letra'], 'string'],
             [['autor', 'video', 'audio'], 'string', 'max' => 100],
@@ -56,7 +59,7 @@ class Cancion extends \yii\db\ActiveRecord {
             'genero' => Yii::t('app', 'Genero'),
             'album' => Yii::t('app', 'Album'),
             'anioCreacion' => Yii::t('app', 'Year of creation'),
-            'video' => Yii::t('app', 'Video'),
+            'video' => Yii::t('app', 'url video'),
             'audio' => Yii::t('app', 'Song'),
             'fecha_subida' => Yii::t('app', 'Upload date'),
             'letra' => Yii::t('app', 'Letter'),

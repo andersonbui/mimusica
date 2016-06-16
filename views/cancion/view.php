@@ -26,30 +26,40 @@ $this->params['breadcrumbs'][] = $this->title;
         ])
         ?>
     </p>
+    <div class='row'>
+        <div class='col-lg-4 col-lg-push-8'>
+        <!--<div class='col-sm-4'>-->
+            <div class='embed-responsive embed-responsive-16by9'>
+                <iframe 
+                    src="<?php echo $model->video ?>"
+                    class="embed-responsive-item">
+                </iframe> 
+            </div>
+        </div>
+        <div class='col-lg-8 col-lg-pull-4'>
+        <!--<div class='col-sm-8'>-->
 
-    <?=
-    DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id_cancion',
-            'autor',
-            'email:email',
-            'titulo',
-            'genero',
-            'album',
-            'anioCreacion',
-            'video',
-            'audio',
-            'fecha_subida',
-            'letra:ntext',
-            'total_reproduciones',
-        ],
-    ])
-    ?>
+            <?=
+            DetailView::widget([
+                'model' => $model,
+                'template' => '<tr><div class="row block" style="background:white; border-top: 1px black solid "> <div class="col-sm-3"><b>{label}</b></div><div class="col-sm-9">{value}</div> </div></tr>',
+                'attributes' => [
+                    'id_cancion',
+                    'autor',
+                    'email:email',
+                    'titulo',
+                    'genero',
+                    'album',
+                    'anioCreacion',
+                    'video',
+                    'audio',
+                    'fecha_subida',
+                    'letra:ntext',
+                    'total_reproduciones',
+                ],
+            ])
+            ?>
+        </div>
 
-    <iframe width="420" height="315"
-            src="<?php echo $model->video ?>">
-            src="<?php echo $model->video ?>">
-    </iframe> 
-
+    </div>
 </div>

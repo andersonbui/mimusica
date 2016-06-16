@@ -1,0 +1,2 @@
+Base de datos:
+	cancion->totalReproducciones: no null, valor por defecto 0
