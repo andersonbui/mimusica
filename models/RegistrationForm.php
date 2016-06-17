@@ -38,7 +38,7 @@ class RegistrationForm extends BaseRegistrationForm {
         return ArrayHelper::merge($rules, [
         'password_repeatRequired' => ['password_repeat', 'required'],
         'password_repeatLength' => ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Los passwords no coinciden'],
-        ['verifyCode', 'captcha'],
+//        ['verifyCode', 'captcha'],
         ]);
     }
 
