@@ -18,7 +18,7 @@ class ComentarioSearch extends Comentario
     public function rules()
     {
         return [
-            [['id_usuario', 'id_cancion'], 'integer'],
+            [['id_usuario', 'id_cancion', 'id'], 'integer'],
             [['comentario'], 'safe'],
         ];
     }
@@ -47,6 +47,10 @@ class ComentarioSearch extends Comentario
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 3,
+            ],
+            
         ]);
 
         $this->load($params);
@@ -61,6 +65,7 @@ class ComentarioSearch extends Comentario
         $query->andFilterWhere([
             'id_usuario' => $this->id_usuario,
             'id_cancion' => $this->id_cancion,
+            'id' => $this->id,
         ]);
 
         $query->andFilterWhere(['like', 'comentario', $this->comentario]);

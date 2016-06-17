@@ -25,8 +25,8 @@ class Comentario extends \yii\db\ActiveRecord {
     public function rules() {
         return [
             [['comentario'], 'required'],
-            [['comentario'], 'required'],
-            [['comentario'], 'required'],
+//            [['id_cancion'], 'required'],
+//            [['id_usuario'], 'required'],
         ];
     }
 

@@ -18,5 +18,5 @@ $this->params['breadcrumbs'][] = $this->title;
         favoritos y de tu propia autoria.
     </p>
 
-    <code><?= __FILE__ ?></code>
+    <!--<code><?= __FILE__ ?></code>-->
 </div>
