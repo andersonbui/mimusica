@@ -5,11 +5,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Cancion */
 
-$this->title = Yii::t('app', 'Update {modelClass}: ', [
+$this->title = Yii::t('app', 'Update song', [
     'modelClass' => 'Cancion',
-]) . $model->id_cancion;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cancions'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id_cancion, 'url' => ['view', 'id' => $model->id_cancion]];
+]) . ':'.$model->titulo;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Songs'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->titulo, 'url' => ['view', 'id' => $model->id_cancion]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="cancion-update">

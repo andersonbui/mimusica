@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\MiscancionesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Songs');
+$this->title = Yii::t('app', 'My songs');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cancion-index">

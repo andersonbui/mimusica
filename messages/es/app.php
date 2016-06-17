@@ -73,6 +73,7 @@ return [
     'Songs' => 'Canciones',
     'Type' => 'Tipo',
     'Users' => 'Usuarios',
+    'Update song' => 'Actualizar cancion',
     'Update user' => 'Actualizar usuario',
     'Update' => 'Actualizar',
 ];
