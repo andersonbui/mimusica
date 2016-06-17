@@ -5,7 +5,8 @@ namespace app\models;
 use dektrium\user\models\User as ActiveRecord;
 
 class Usuario extends ActiveRecord {
-
+//    public $password_repeat;
+//    public $verifyCode;
     public function attributeLabels() {
         $attribLabels = parent::attributeLabels();
         $attribLabels['username'] = \Yii::t('app', 'Nick name');

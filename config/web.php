@@ -19,14 +19,16 @@ $config = [
             'class' => \dektrium\user\Module::className(),
             'controllerMap' => [
                 'settings' => 'app\controllers\SettingsController',
-                'registration' => [
-                    'class' => \dektrium\user\controllers\RegistrationController::className(),
-                    'on ' . \dektrium\user\controllers\RegistrationController::EVENT_AFTER_CONFIRM=> function ($e) {
-                        Yii::$app->response->redirect(['/user/settings'])->send();
-//                        Yii::$app->response->redirect(array('/user/security/login'))->send();
-                        Yii::$app->end();
-                    }
-                ],
+                'registration' => 'app\controllers\RegistrationController',
+//                'registration' => [
+////                    'class' => \app\controllers\RegistrationController::className(),
+//                    'class' => \dektrium\user\controllers\RegistrationController::className(),
+//                    'on ' . \dektrium\user\controllers\RegistrationController::EVENT_AFTER_CONFIRM=> function ($e) {
+//                        Yii::$app->response->redirect(['/user/settings'])->send();
+////                        Yii::$app->response->redirect(array('/user/security/login'))->send();
+//                        Yii::$app->end();
+//                    }
+//                ],
             ],
         ],
         'rbac' => [

@@ -62,8 +62,11 @@ class CancionController extends Controller {
     public function actionCreate() {
         $model = new Cancion();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_cancion]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->id_usuario = Yii::$app->user->identity->id;
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id_cancion]);
+            }
         } else {
             return $this->render('create', [
                         'model' => $model,

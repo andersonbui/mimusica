@@ -32,17 +32,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'username',['inputOptions' => ['placeHolder' => \Yii::t("yii",'Nick name')]]) ?>
 
-                <?php if ($module->enableGeneratingPassword == false): ?>
+                <?php // if ($module->enableGeneratingPassword == false): ?>
                     <?= $form->field($model, 'password')->passwordInput() ?>
                     <?= $form->field($model, 'password_repeat')->passwordInput() ?>
-                <?php endif ?>
+                <?php // endif ?>
 
                 <?= $form->field($model, 'nombres')->textInput(['maxlength' => true]) ?>
 
                 <?= $form->field($model, 'apellidos')->textInput(['maxlength' => true]) ?>
 
                 <?= $form->field($model, 'foto')->fileInput() ?>
-
+                
+                 <?=
+                $form->field($model, 'verifyCode')->widget(yii\captcha\Captcha::className(), [
+                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                ])
+                ?>
+                
                 <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-success btn-block']) ?>
 
                 <?php ActiveForm::end(); ?>

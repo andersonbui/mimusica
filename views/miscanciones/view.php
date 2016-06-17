@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Cancion */
 
 $this->title = $model->titulo;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Songs'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'My songs'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cancion-view">
@@ -28,7 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_cancion',
+//            'id_cancion',
+            'id_usuario',
             'autor',
             'titulo',
             'genero',

@@ -13,14 +13,16 @@ use yii\helpers\ArrayHelper;
 use Yii;
 
 class RegistrationForm extends BaseRegistrationForm {
-    
+
     public $password_repeat;
+    public $verifyCode;
 
     public function attributeLabels() {
         $attribLabels = parent::attributeLabels();
         $attribLabels['username'] = Yii::t('app', 'Nick name');
         return ArrayHelper::merge($attribLabels, [
                     'password_repeat' => Yii::t('app', 'Password repeat'),
+                    'verifyCode' => Yii::t('app', 'Verification Code'),
         ]);
     }
 
@@ -34,8 +36,9 @@ class RegistrationForm extends BaseRegistrationForm {
             'message' => Yii::t('app', 'This Nick name has already been taken')
         ];
         return ArrayHelper::merge($rules, [
-                    'password_repeatRequired' => ['password_repeat', 'required'],
-                    'password_repeatLength' => ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Los passwords no coinciden'],
+        'password_repeatRequired' => ['password_repeat', 'required'],
+        'password_repeatLength' => ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Los passwords no coinciden'],
+        ['verifyCode', 'captcha'],
         ]);
     }
 

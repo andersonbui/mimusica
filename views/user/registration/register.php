@@ -5,13 +5,14 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
 
 $this->title = Yii::t('user', 'Sign up');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <h1><?= Html::encode($this->title) ?></h1>
-<h4><?php // echo 'aqui '.$mensg.' hola';     ?></h4>
+<h4><?php // echo 'aqui '.$mensg.' hola';       ?></h4>
 
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
@@ -28,23 +29,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]);
                 ?>
 
-                <?= $form->field($model, 'email', ['inputOptions' => ['placeHolder' => \Yii::t("app", 'Email')]])->label("")  ?>
+                <?= $form->field($model, 'email', ['inputOptions' => ['placeHolder' => \Yii::t("app", 'Email')]])->label("") ?>
 
                 <?= $form->field($model, 'username', ['inputOptions' => ['placeHolder' => \Yii::t("app", 'Nick name')]])->label("") ?>
 
                 <?php if ($module->enableGeneratingPassword == false): ?>
-                    <?= $form->field($model, 'password', ['inputOptions' => ['placeHolder' => \Yii::t("app", 'Password')]])->passwordInput()->label("")  ?>
-                    <?= $form->field($model, 'password_repeat', ['inputOptions' => ['placeHolder' => \Yii::t("app", 'Password repeat')]])->passwordInput()->label("")  ?>
+                    <?= $form->field($model, 'password', ['inputOptions' => ['placeHolder' => \Yii::t("app", 'Password')]])->passwordInput()->label("") ?>
+                    <?= $form->field($model, 'password_repeat', ['inputOptions' => ['placeHolder' => \Yii::t("app", 'Password repeat')]])->passwordInput()->label("") ?>
                 <?php endif ?>
 
-                <?php // echo $form->field($model, 'nombres')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                    ]) ?>
 
-                <?php // echo  $form->field($model, 'apellidos')->textInput(['maxlength' => true]) ?>
-
-                <?php // echo  $form->field($model, 'foto')->fileInput() ?>
-
-
-                <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-success btn-block']) ?>
+                <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-success btn-block']); ?>
 
                 <?php ActiveForm::end(); ?>
             </div>

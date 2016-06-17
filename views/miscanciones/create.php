@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Cancion */
 
 $this->title = Yii::t('app', 'Create Cancion');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cancions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'My songs'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cancion-create">

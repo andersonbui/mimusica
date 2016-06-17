@@ -18,8 +18,16 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Verification Code' => 'Codigo de verificación',
     'Manage users' => 'Gestionar usuarios',
     'My songs' => 'Mis canciones',
+    'Body' => 'Primero',
+    'Subject' => 'Primero',
+    'Name' => 'Primero',
+    'first' => 'Primero',
+    'last' => 'Ultimo',
+    'next' => 'Siguiente',
+    'previous' => 'Anterior',
     'Delete' => 'Eliminar',
     'Songs' => 'Canciones',
     'Create' => 'Agregar',
@@ -32,6 +40,7 @@ return [
     'Title' => 'Titulo',
     'Song' => 'Cancion',
     'Total Views' => 'Total reproducciones',
+    'This id has already been taken' => 'Este id ya ha sido utilizado.',
     'This Nick name has already been taken' => 'Este apodo ya ha sido utilizado.',
     'Nick name or email' => 'Apodo o correo electrónico',
     'Settings' => 'Configuración',

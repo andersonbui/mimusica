@@ -33,15 +33,17 @@ class Cancion extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['id_cancion', 'titulo', 'genero', 'anioCreacion', 'letra'], 'required'],
-            [['id_cancion', 'anioCreacion'], 'integer'],
-            'id_cancionUnique' => ['id_cancion', 'unique', 'message' => Yii::t('app', 'This id has already been taken')],
+//            [['id_cancion', 'titulo', 'genero', 'anioCreacion', 'letra'], 'required'],
+//            [['id_cancion'], 'integer'],
+            [['anioCreacion'], 'integer','min'=>1990,'max'=>2200],
+//            'id_cancionUnique' => ['id_cancion', 'unique', 'message' => Yii::t('app', 'This id has already been taken')],
             'videoUrl' => ['video', 'url'],
-            [['fecha_subida'], 'safe'],
+            'audioUrl' => ['audio', 'url'],
+//            [['fecha_subida'], 'safe'],
             [['letra'], 'string'],
             [['autor', 'video', 'audio'], 'string', 'max' => 100],
             [['titulo', 'genero', 'album'], 'string', 'max' => 50],
-            [['total_reproduciones'], 'string', 'max' => 255],
+//            [['total_reproduciones'], 'string', 'max' => 255],
         ];
     }
 
@@ -57,7 +59,7 @@ class Cancion extends \yii\db\ActiveRecord {
             'album' => Yii::t('app', 'Album'),
             'anioCreacion' => Yii::t('app', 'Year of creation'),
             'video' => Yii::t('app', 'url video'),
-            'audio' => Yii::t('app', 'Song'),
+            'audio' => Yii::t('app', 'Audio'),
             'fecha_subida' => Yii::t('app', 'Upload date'),
             'letra' => Yii::t('app', 'Letter'),
             'total_reproduciones' => Yii::t('app', 'Total Views'),

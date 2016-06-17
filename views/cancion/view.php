@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id_cancion], ['class' => 'btn btn-primary']) ?>
-        <?=
+        <?php Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id_cancion], ['class' => 'btn btn-primary']) ?>
+        <?php
         Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id_cancion], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $model,
                 'template' => '<tr><div class="row block" style="background:white; border-top: 1px black solid "> <div class="col-sm-3"><b>{label}</b></div><div class="col-sm-9">{value}</div> </div></tr>',
                 'attributes' => [
-                    'id_cancion',
+//                    'id_cancion',
                     'autor',
                     'titulo',
                     'genero',
