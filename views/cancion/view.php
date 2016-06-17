@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     <div class='row'>
         <div class='col-lg-4 col-lg-push-8'>
-        <!--<div class='col-sm-4'>-->
+            <!--<div class='col-sm-4'>-->
             <div class='embed-responsive embed-responsive-16by9'>
                 <iframe 
                     src="<?php echo $model->video ?>"
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <div class='col-lg-8 col-lg-pull-4'>
-        <!--<div class='col-sm-8'>-->
+            <!--<div class='col-sm-8'>-->
 
             <?=
             DetailView::widget([
@@ -60,5 +60,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ?>
         </div>
 
+
+    </div>
+    <div class="row">
+        <div class='col-lg-8 col-lg-pull-4'>
+            <div class="container">
+                <?php
+                $query = $model->getComentarios();
+                foreach ($query as $row => $value){
+//                    print_r($row);
+                    echo $value->comentario . $value->id_cancion;
+                }
+                ?>
+            </div>
+        </div>
     </div>
 </div>

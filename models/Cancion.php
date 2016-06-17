@@ -73,5 +73,9 @@ class Cancion extends \yii\db\ActiveRecord {
     public static function find() {
         return new CancionQuery(get_called_class());
     }
-
+    
+    public function getComentarios(){
+        $comentarios = Comentario::find()->where(['id_cancion' => $this->id_cancion])->all();
+        return $comentarios;
+    }
 }
