@@ -228,6 +228,13 @@ $this->title = 'My Yii Application';
             <div class="desc">Beautiful Mountains</div>
         </div>
     </div>
+    <div class="responsive">
+        <div class="img">
+            <img src="<?php echo Yii::getAlias('@web').'/'.app\models\Acorde::findOne('a')->ubicacion; ?>" alt="<?php echo Yii::getAlias('@web').'/'.app\models\Acorde::findOne('a')->ubicacion?>" width="300" height="200">
+            <div class="desc">Beautiful Mountains</div>
+            <div class="desc">Beautiful Mountains</div>
+        </div>
+    </div>
 
     <div class="clearfix"></div>
 
