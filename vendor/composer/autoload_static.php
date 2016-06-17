@@ -38,6 +38,7 @@ class ComposerStaticInit0fc723e42511b8b2f7e62f02e097755b
         ),
         'd' => 
         array (
+            'dosamigos\\gallery\\' => 18,
             'dektrium\\user\\' => 14,
             'dektrium\\rbac\\' => 14,
         ),
@@ -111,6 +112,10 @@ class ComposerStaticInit0fc723e42511b8b2f7e62f02e097755b
         'karpoff\\icrop\\' => 
         array (
             0 => __DIR__ . '/..' . '/karpoff/yii2-crop-image-upload',
+        ),
+        'dosamigos\\gallery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-gallery-widget/src',
         ),
         'dektrium\\user\\' => 
         array (

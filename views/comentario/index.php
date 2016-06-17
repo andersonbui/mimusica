@@ -1,21 +1,34 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-
+use yii\grid\GridView;
+use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $model app\models\Comentario */
-/* @var $form ActiveForm */
+/* @var $searchModel app\models\ComentarioSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = Yii::t('app', 'Comentarios');
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="comentario-index">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-        <?= $form->field($model, 'comentario') ?>
-    
-        <div class="form-group">
-            <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-primary']) ?>
-        </div>
-    <?php ActiveForm::end(); ?>
+    <p>
+        <?= Html::a(Yii::t('app', 'Create Comentario'), ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+<?php Pjax::begin(); ?>    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
 
-</div><!-- comentario-index -->
+            'id_usuario',
+            'id_cancion',
+            'comentario',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+<?php Pjax::end(); ?></div>

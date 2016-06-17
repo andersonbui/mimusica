@@ -3,7 +3,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'My Yii Application';
+$this->title = 'Mimusica';
 ?>
 <head>
     <style>
@@ -150,12 +150,12 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
 
-    <img src="https://studiosol-a.akamaihd.net/uploadfile/letras/imagem_destaques/100_es_0d45bdb.jpg" alt=""  width="1110">
+<!--    <img src="https://studiosol-a.akamaihd.net/uploadfile/letras/imagem_destaques/100_es_0d45bdb.jpg" alt=""  width="1110">
     <div style="margin-top: 50px;padding:6px;" class="jumbotron">
         <p>Estas son las canciones mas vistas de la semana.</p>
     </div>
-    <!--https://studiosol-a.akamaihd.net/uploadfile/letras/imagem_destaques/100_es_0d45bdb.jpg-->
-    <h2 style="text-align:center" class=""></h2>
+    https://studiosol-a.akamaihd.net/uploadfile/letras/imagem_destaques/100_es_0d45bdb.jpg
+    <h2 style="text-align:center" class=""></h2>-->
 
     <div class="responsive">
         <div class="img">
@@ -228,13 +228,13 @@ $this->title = 'My Yii Application';
             <div class="desc">Beautiful Mountains</div>
         </div>
     </div>
-    <div class="responsive">
+<!--    <div class="responsive">
         <div class="img">
-            <img src="<?php echo Yii::getAlias('@web').'/'.app\models\Acorde::findOne('a')->ubicacion; ?>" alt="<?php echo Yii::getAlias('@web').'/'.app\models\Acorde::findOne('a')->ubicacion?>" width="300" height="200">
+            <img src="<?php // echo Yii::getAlias('@web').'/'.app\models\Acorde::findOne('a')->ubicacion; ?>" alt="<?php echo Yii::getAlias('@web').'/'.app\models\Acorde::findOne('a')->ubicacion?>" width="300" height="200">
             <div class="desc">Beautiful Mountains</div>
             <div class="desc">Beautiful Mountains</div>
         </div>
-    </div>
+    </div>-->
 
     <div class="clearfix"></div>
 

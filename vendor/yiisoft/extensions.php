@@ -140,4 +140,13 @@ return array (
       '@karpoff/icrop' => $vendorDir . '/karpoff/yii2-crop-image-upload',
     ),
   ),
+  '2amigos/yii2-gallery-widget' => 
+  array (
+    'name' => '2amigos/yii2-gallery-widget',
+    'version' => '1.0.2.0',
+    'alias' => 
+    array (
+      '@dosamigos/gallery' => $vendorDir . '/2amigos/yii2-gallery-widget/src',
+    ),
+  ),
 );

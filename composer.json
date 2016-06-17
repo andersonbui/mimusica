@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "dektrium/yii2-user": "0.9.*@dev",
 	"dektrium/yii2-rbac": "dev-master",
-        "karpoff/yii2-crop-image-upload": "*"
+        "karpoff/yii2-crop-image-upload": "*",
+        "2amigos/yii2-gallery-widget": "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
