@@ -93,7 +93,7 @@ abstract class Application extends Module
     /**
      * @var string the application name.
      */
-    public $name = 'Mo Application';
+    public $name = 'My Application';
     /**
      * @var string the version of this application.
      */
