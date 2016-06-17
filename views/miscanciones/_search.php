@@ -19,8 +19,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'autor') ?>
 
-    <?= $form->field($model, 'email') ?>
-
     <?= $form->field($model, 'titulo') ?>
 
     <?= $form->field($model, 'genero') ?>

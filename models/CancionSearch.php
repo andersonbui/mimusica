@@ -20,7 +20,7 @@ class CancionSearch extends Cancion {
     public function rules() {
         return [
             [['id_cancion', 'anioCreacion'], 'integer'],
-            [['autor_titulo', 'autor', 'email', 'titulo', 'genero', 'album', 'video', 'audio', 'fecha_subida', 'letra', 'total_reproduciones'], 'safe'],
+            [['autor_titulo', 'autor', 'titulo', 'genero', 'album', 'video', 'audio', 'fecha_subida', 'letra', 'total_reproduciones'], 'safe'],
         ];
     }
 
@@ -71,7 +71,6 @@ class CancionSearch extends Cancion {
 
         $query->andFilterWhere(['like', 'autor', $this->autor])
 //                ->andFilterWhere(['like', 'nombre_tipo', $this->autor_titulo])
-                ->andFilterWhere(['like', 'email', $this->email])
                 ->andFilterWhere(['like', 'titulo', $this->titulo])
                 ->andFilterWhere(['like', 'genero', $this->genero])
                 ->andFilterWhere(['like', 'album', $this->album])

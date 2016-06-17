@@ -18,6 +18,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Manage users' => 'Gestionar usuarios',
+    'My songs' => 'Mis canciones',
     'Delete' => 'Eliminar',
     'Songs' => 'Canciones',
     'Create' => 'Agregar',

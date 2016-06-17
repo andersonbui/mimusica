@@ -12,14 +12,15 @@ use app\models\Cancion;
  */
 class MiscancionesSearch extends Cancion
 {
+    
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id_cancion', 'anioCreacion'], 'integer'],
-            [['autor', 'email', 'titulo', 'genero', 'album', 'video', 'audio', 'fecha_subida', 'letra', 'total_reproduciones'], 'safe'],
+            [['id_usuario','id_cancion', 'anioCreacion'], 'integer'],
+            [['autor', 'titulo', 'genero', 'album', 'video', 'audio', 'fecha_subida', 'letra', 'total_reproduciones'], 'safe'],
         ];
     }
 
@@ -60,12 +61,12 @@ class MiscancionesSearch extends Cancion
         // grid filtering conditions
         $query->andFilterWhere([
             'id_cancion' => $this->id_cancion,
+            'id_usuario' => $this->id_usuario,
             'anioCreacion' => $this->anioCreacion,
             'fecha_subida' => $this->fecha_subida,
         ]);
 
         $query->andFilterWhere(['like', 'autor', $this->autor])
-            ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'titulo', $this->titulo])
             ->andFilterWhere(['like', 'genero', $this->genero])
             ->andFilterWhere(['like', 'album', $this->album])

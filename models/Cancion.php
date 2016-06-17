@@ -9,7 +9,6 @@ use Yii;
  *
  * @property integer $id_cancion
  * @property string $autor
- * @property string $email
  * @property string $titulo
  * @property string $genero
  * @property string $album
@@ -38,11 +37,10 @@ class Cancion extends \yii\db\ActiveRecord {
             [['id_cancion', 'anioCreacion'], 'integer'],
             'id_cancionUnique' => ['id_cancion', 'unique', 'message' => Yii::t('app', 'This id has already been taken')],
             'videoUrl' => ['video', 'url'],
-            'email' => ['email', 'email'],
             [['fecha_subida'], 'safe'],
             [['letra'], 'string'],
             [['autor', 'video', 'audio'], 'string', 'max' => 100],
-            [['email', 'titulo', 'genero', 'album'], 'string', 'max' => 50],
+            [['titulo', 'genero', 'album'], 'string', 'max' => 50],
             [['total_reproduciones'], 'string', 'max' => 255],
         ];
     }
@@ -54,7 +52,6 @@ class Cancion extends \yii\db\ActiveRecord {
         return [
             'id_cancion' => Yii::t('app', 'Id'),
             'autor' => Yii::t('app', 'Author'),
-            'email' => Yii::t('app', 'Email'),
             'titulo' => Yii::t('app', 'Title'),
             'genero' => Yii::t('app', 'Genero'),
             'album' => Yii::t('app', 'Album'),

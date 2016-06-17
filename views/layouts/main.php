@@ -49,28 +49,54 @@ $model = Yii::createObject(LoginForm::className());
                 ['label' => \Yii::t("app", 'Songs'), 'url' => ['/cancion/index']],
                 ['label' => \Yii::t("app", 'About'), 'url' => ['/site/about']],
                 ['label' => \Yii::t("app", 'Contact'), 'url' => ['/site/contact']],
-            ];
-            if (!Yii::$app->user->isGuest) {
-                array_push($navItems, ['label' => \Yii::t("app", 'Users'),
-                    'url' => ['/user/admin'],
-                    'linkOptions' => ['data-method' => 'post']]
-                );
-                array_push($navItems, [
-                    'label' => \Yii::t("app", 'Profile') . ' [ ' . Yii::$app->user->identity->username . ' ]',
+                ['label' =>
+                    !Yii::$app->user->isGuest ?
+                            \Yii::t("app", 'Profile') . ' [ ' . Yii::$app->user->identity->username . ' ]' : '',
                     'items' => [
-//                        'label' => \Yii::t("app", 'Profile'),
-                        Html::beginForm(['/user/settings'], 'post')
-                        . Html::submitButton(
-                                \Yii::t("app", 'Settings') . '', ['class' => 'btn btn-link']
-                        ) . Html::endForm() . '</li>',
-                        Html::beginForm(['/site/logout'], 'post')
-                        . Html::submitButton(
-                                \Yii::t("app", 'Logout'), ['class' => 'btn btn-link']
-                        ) . Html::endForm() . '</li>',
-                    ]
-                        ]
-                );
-            }
+                        ['label' => \Yii::t("app", 'Settings'),
+                            'url' => ['/user/settings'],
+                            'linkOptions' => ['data-method' => 'post'],
+                        ],
+                        ['label' => \Yii::t("app", 'My songs'),
+                            'url' => ['/miscanciones/index'],
+                            'linkOptions' => ['data-method' => 'post'],
+                        ],
+                        ['label' => \Yii::t("app", 'Manage users'),
+                            'url' => ['/user/admin'],
+                            'linkOptions' => ['data-method' => 'post'],
+                            'visible' => !Yii::$app->user->isGuest,
+                        ],
+                        ['label' => \Yii::t("app", 'Logout'),
+                            'url' => ['/site/logout'],
+                            'linkOptions' => ['data-method' => 'post'],
+                        ],
+                    ],
+                    'visible' => !Yii::$app->user->isGuest
+                ]
+            ];
+//            if (!Yii::$app->user->isGuest) {
+//               
+//                array_push($navItems, [
+//                    'label' => \Yii::t("app", 'Profile') . ' [ ' . Yii::$app->user->identity->username . ' ]',
+//                    'items' => [
+////                        'label' => \Yii::t("app", 'Profile'),
+//                        Html::beginForm(['/user/settings'], 'post')
+//                        . Html::submitButton(
+//                                \Yii::t("app", 'Settings') . '', ['class' => 'btn btn-link']
+//                        ) . Html::endForm(),
+//                        Html::beginForm(['/miscanciones/index'], 'post')
+//                        . Html::submitButton(
+//                                \Yii::t("app", 'My songs') . '', ['class' => 'btn btn-link']
+//                        ) . Html::endForm(),
+////                        ['label' => \Yii::t("app", 'My songs'), 'url' => ['/miscanciones/index'], 'options' => ['type'=>'submit','class' => 'btn-link']],
+//                        Html::beginForm(['/site/logout'], 'post')
+//                        . Html::submitButton(
+//                                \Yii::t("app", 'Logout'), ['class' => 'btn btn-link']
+//                        ) . Html::endForm() . '</li>',
+//                    ]
+//                        ]
+//                );
+//            }
             ?>
             <div class="navbar-header">
                 <?php echo Html::beginForm(Url::to(['/cancion']), 'get', ['class' => 'navbar-form navbar-center  ']); ?>
@@ -165,10 +191,13 @@ $model = Yii::createObject(LoginForm::className());
         </div>
 
         <footer class="footer">
-            <div class="container">
-                <p class="pull-left">&copy; Mimusica <?= date('Y') ?></p>
-
-                <p class="pull-right"><?= Yii::powered() ?></p>
+            <div class="container row">
+                <div class=" col-sm-6">
+                    <p class="pull-left">&copy; Mimusica <?= date('Y') ?></p>
+                </div>
+                <div class=" col-sm-6">
+                    <p class="pull-right"><?= Yii::powered() ?></p>
+                </div>
             </div>
         </footer>
 

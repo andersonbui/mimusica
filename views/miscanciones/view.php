@@ -30,7 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id_cancion',
             'autor',
-            'email:email',
             'titulo',
             'genero',
             'album',
